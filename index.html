@@ -44,31 +44,39 @@
     </footer>
     <script type="text/javascript">
         var jsonFileUrl = "";
+        var league = "";
 
         $('#btnGetNBAPlayers').click(function () {
             jsonFileUrl = 'nbaplayers.json';
-            GetNbaJson();
+            league = "nba";
+            GetJSON();
         });
         $('#btnGetNFLPlayers').click(function () {
-            jsonFileUrl = 'nbaplayers.json';
-            GetNbaJson();
+            jsonFileUrl = 'nflplayers.json';
+            league = "nfl";
+            GetJSON();
         });
 
         //FUNCTION TO RETRIEVE JSON OBJECTS
-        function GetNbaJson() {
+        function GetJSON() {
             $.ajax({
                 url: jsonFileUrl,
                 type: 'GET',
                 datatype: 'json',
-                success: function(data) {
-                    DisplayNBA(data);
+                success: function (data) {
+                    if (league == "nba") {
+                        DisplayNBA(data);
+                    } else {
+                        DisplayNFL(data);
+                    }
                 },
-                error: function(jqXHR, textStatus, errorThrown) {
+                error: function (jqXHR, textStatus, errorThrown) {
                     alert(textStatus);
-                } 
+                }
             });
         }
 
+        //FUNCTION TO DISPLAY THE NBA PLAYER ITEMS
         function DisplayNBA(jsonFile) {
             var output = "";
             output += "<tr>";
@@ -79,17 +87,39 @@
             output += "<th>Height</th>";
             output += "<th>Country</th>";
             output += "</tr>";
-           $(jsonFile.nbaPlayers).each(function(index){
+            $(jsonFile.nbaPlayers).each(function (index) {
                 output += "<tr>";
-                    output += "<td>" + jsonFile.nbaPlayers[index].jersey + "</td>"; 
-                    output += "<td>" + jsonFile.nbaPlayers[index].name + "</td>"; 
-                    output += "<td>" + jsonFile.nbaPlayers[index].team + "</td>"; 
-                    output += "<td>" + jsonFile.nbaPlayers[index].position + "</td>"; 
-                    output += "<td>" + jsonFile.nbaPlayers[index].height + "</td>"; 
-                    output += "<td>" + jsonFile.nbaPlayers[index].country + "</td>"; 
+                output += "<td>" + jsonFile.nbaPlayers[index].jersey + "</td>";
+                output += "<td>" + jsonFile.nbaPlayers[index].name + "</td>";
+                output += "<td>" + jsonFile.nbaPlayers[index].team + "</td>";
+                output += "<td>" + jsonFile.nbaPlayers[index].position + "</td>";
+                output += "<td>" + jsonFile.nbaPlayers[index].height + "</td>";
+                output += "<td>" + jsonFile.nbaPlayers[index].country + "</td>";
                 output += "</tr>";
-           })
-           document.getElementById('tableNBA').innerHTML = output;
+            })
+            document.getElementById('tableNBA').innerHTML = output;
+        }
+
+        //FUNCTION TO DISPLAY THE NFL PLAYER ITEMS
+        function DisplayNFL(jsonFile) {
+            var output = "";
+            output += "<tr>";
+            output += "<th>ID</th>";
+            output += "<th>Name</th>";
+            output += "<th>Team</th>";
+            output += "<th>Position</th>";
+            output += "<th>Status</th>";
+            output += "</tr>";
+            $(jsonFile.nflPlayers).each(function(index) {
+                output += "<tr>";
+                output += "<td>" + jsonFile.nflPlayers[index].id + "</td>";
+                output += "<td>" + jsonFile.nflPlayers[index].name + "</td>";
+                output += "<td>" + jsonFile.nflPlayers[index].team + "</td>";
+                output += "<td>" + jsonFile.nflPlayers[index].position + "</td>";
+                output += "<td>" + jsonFile.nflPlayers[index].status + "</td>";
+                output += "<td>" + js
+            });
+            document.getElementById('tableNFL').innerHTML = output;
         }
     </script>
 </body>
