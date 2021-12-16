@@ -59,7 +59,9 @@ button {
     width: 47%;
 }
 table {
-    background-color: white;
+    background-color: #646464;
     margin-top: 5%;
-    color: black;
+    color: white;
+    font-size: 35px;
+
 }
