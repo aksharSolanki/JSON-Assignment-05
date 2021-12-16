@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Assignment 05</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>NBA Players and NFL Players Info</h1>
+        <h2>Click on the buttons below the get more Info</h2>
+    </header>
+    <main>
+        <div id="container">
+            <div id="nba">
+                <h3>NBA Players</h3>
+                <article>
+                    The National Basketball Association is a professional basketball league in North America.<br>
+                    The league is composed of 30 teams and is one of the four major professional sports <br>
+                    leagues in the United States and Canada.<br>
+                    It is the premier men's professional basketball league in the world.<br>
+                </article>
+                <br>
+                <button id="btnGetNBAPlayers">Get NBA Players</button>
+                <br><br>
+                <table id="tableNBA" border="2"></table>
+            </div>
+            <div id="nfl">
+                <h3>NFL Players</h3>
+                <article>
+                    The National Football League is a professional American football league consisting of 32 teams,<br>
+                    divided equally between the National Football Conference and the American Football Conference.<br>
+                </article>
+                <br>
+                <button id="btnGetNFLPlayers">Get NFL Players</button>
+                <br><br>
+                <table id="tableNFL" border="2"></table>
+            </div>
+        </div>
+    </main>
+    <br>
+    <footer>
+        &copy; Akshar Solanki | N01418888 2021-2022 Humber College
+    </footer>
+    <script type="text/javascript">
+        var jsonFileUrl = "";
+
+        $('#btnGetNBAPlayers').click(function () {
+            jsonFileUrl = 'nbaplayers.json';
+            GetNbaJson();
+        });
+        $('#btnGetNFLPlayers').click(function () {
+            jsonFileUrl = 'nbaplayers.json';
+            GetNbaJson();
+        });
+
+        //FUNCTION TO RETRIEVE JSON OBJECTS
+        function GetNbaJson() {
+            $.ajax({
+                url: jsonFileUrl,
+                type: 'GET',
+                datatype: 'json',
+                success: function(data) {
+                    DisplayNBA(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                } 
+            });
+        }
+
+        function DisplayNBA(jsonFile) {
+            var output = "";
+            output += "<tr>";
+            output += "<th>Jersey</th>";
+            output += "<th>Name</th>";
+            output += "<th>Team</th>";
+            output += "<th>Position</th>";
+            output += "<th>Height</th>";
+            output += "<th>Country</th>";
+            output += "</tr>";
+           $(jsonFile.nbaPlayers).each(function(index){
+                output += "<tr>";
+                    output += "<td>" + jsonFile.nbaPlayers[index].jersey + "</td>"; 
+                    output += "<td>" + jsonFile.nbaPlayers[index].name + "</td>"; 
+                    output += "<td>" + jsonFile.nbaPlayers[index].team + "</td>"; 
+                    output += "<td>" + jsonFile.nbaPlayers[index].position + "</td>"; 
+                    output += "<td>" + jsonFile.nbaPlayers[index].height + "</td>"; 
+                    output += "<td>" + jsonFile.nbaPlayers[index].country + "</td>"; 
+                output += "</tr>";
+           })
+           document.getElementById('tableNBA').innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>

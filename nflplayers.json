@@ -1,0 +1,67 @@
+{
+    "nflPlayers" : [
+        {
+            "id" : 1,
+            "name" : "Darius Kilgo",
+            "team" : "Arizona Cardinals",
+            "position" : "NT",
+            "status" : "CUT"
+        }, 
+        {
+            "id" : 2,
+            "name" : "Cooper Kupp",
+            "team" : "Los Angeles Rams",
+            "position" : "WR",
+            "status" : "ACT"
+        }, 
+        {
+            "id" : 3,
+            "name" : "Carlos Hyde",
+            "team" : "Jacksonville Jaguars",
+            "position" : "RB",
+            "status" : "ACT"
+        }, 
+        {
+            "id" : 4,
+            "name" : "Matt Overton",
+            "team" : "Los Angeles Chargers",
+            "position" : "LS",
+            "status" : "ACT"
+        }, 
+        {
+            "id" : 5,
+            "name" : "Brandon Dunn",
+            "team" : "Houston Texans",
+            "position" : "NT",
+            "status" : "CUT"
+        }, 
+        {
+            "id" : 6,
+            "name" : "Payton Turner",
+            "team" : "New Orleans Saints",
+            "position" : "DE",
+            "status" : "RES"
+        }, 
+        {
+            "id" : 7,
+            "name" : "Jacob Tuioti-Mariner",
+            "team" : "Pittsburgh Steelers",
+            "position" : "LB",
+            "status" : "DEV"
+        }, 
+        {
+            "id" : 8,
+            "name" : "Rober Woods",
+            "team" : "Detroit Lions",
+            "position" : "LB",
+            "status" : "ACT"
+        }, 
+        {
+            "id" : 9,
+            "name" : "Dak Prescott",
+            "team" : "Dallas Cowboys",
+            "position" : "QB",
+            "status" : "ACT"
+        }
+    ]
+}

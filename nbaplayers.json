@@ -1,0 +1,77 @@
+{
+    "nbaPlayers" : [
+        {
+            "jersey" : 6,
+            "name" : "Lebron James",
+            "team" : "Los Angeles Lakers",
+            "position" : "Forward",
+            "height" : 6.9,
+            "country" : "USA"
+        },
+        {
+            "jersey" : 30,
+            "name" : "Stephen Curry",
+            "team" : "Golden State Warriors",
+            "position" : "Guard",
+            "height" : 6.2,
+            "country" : "USA"
+        },
+        {
+            "jersey" : 13,
+            "name" : "James Harden",
+            "team" : "Brooklyn Nets",
+            "position" : "Guard",
+            "height" : 6.5,
+            "country" : "USA"
+        },
+        {
+            "jersey" : 2,
+            "name" : "Kawhi Leonard",
+            "team" : "Los Angeles Lakers",
+            "position" : "Forward",
+            "height" : 6.7,
+            "country" : "USA"
+        },
+        {
+            "jersey" : 7,
+            "name" : "Kevin Durant",
+            "team" : "Brooklyn Nets",
+            "position" : "Forward",
+            "height" : 6.10,
+            "country" : "USA"
+        },
+        {
+            "jersey" : 20,
+            "name" : "Markelle Fultz",
+            "team" : "Orlando Magic",
+            "position" : "Guard",
+            "height" : 6.4,
+            "country" : "USA"
+        },
+        {
+            "jersey" : 16,
+            "name" : "Usman Garuba",
+            "team" : "Houstan Rockets",
+            "position" : "Forward",
+            "height" : 6.8,
+            "country" : "Spain"
+        },
+        {
+            "jersey" : 27,
+            "name" : "Rudy Gobert",
+            "team" : "Utah Jazz",
+            "position" : "Center",
+            "height" : 7.1,
+            "country" : "France"
+        },
+        {
+            "jersey" : 8,
+            "name" : "Josh Green",
+            "team" : "Brooklyn Nets",
+            "position" : "Guard",
+            "height" : 6.5,
+            "country" : "Australia"
+        }
+
+    ]
+}
